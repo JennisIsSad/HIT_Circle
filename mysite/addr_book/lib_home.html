@@ -1,0 +1,85 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Iconos -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/media/css/style.css" media="screen" type="text/css" />
+<title>查询</title>
+<title>Home</title>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+								
+	  //download script
+	  jQuery('.s_download').on("click", function(e) {
+			var semail = jQuery("#itzurkarthi_email").val();
+			if(semail == '')
+			{
+				alert('Enter Email');
+				return false;
+			}
+			var str = "sub_email="+semail
+			jQuery.ajax({
+				type: "POST",
+				url: "download.php",
+				data: str,
+				cache: false,
+				success: function(htmld){
+						jQuery('#down_update').html(htmld);
+				}
+			});
+	  });
+});
+</script>
+</head>
+<style>
+	#searchform { float:left; margin-left:20px; margin:9px 0px 0px; padding:0px; }
+	#searchform fieldset { padding:0px; border:none; margin:0px; }
+	#searchform input[type="text"] { 
+		background:#e8e8e8;
+		border:none;
+		float:left;		
+		padding:0px 10px 0px 15px;
+		margin:0px;
+		width:150px; 
+		height:38px;
+		line-height:38px;
+		transition:all 300ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+		-moz-transition:all 300ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s; 
+		-webkit-transition:all 300ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s; 
+		-o-transition:all 300ms cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+		color:#585858; 
+	}
+	#searchform input[type="text"]:hover, #searchform input[type="text"]:focus { width:300px; float:left; }
+	#searchform input[type="submit"] { background:url(icon-search.png) center 11px no-repeat; cursor:pointer; margin:0px; padding:0px; width:38px; height:38px; line-height:38px; }
+	
+	input[type="submit"] { padding:4px 17px; color:#ffffcolor:#585858; ff; text-transform:uppercase; border:none; font-size:20px; background:url(gradient.png) bottom repeat-x; cursor:pointer; margin-top:10px; float:left; overflow:visible; transition: all .3s linear; -moz-transition: all .3s linear; -o-transition: all .3s linear; -webkit-transition: all .3s linear; }
+	
+	#searchform input[type="submit"]:hover { background-color:#333232; }
+	.style_1 #searchform input[type='submit'] { background-color:#25ade4; }
+	.style_2 #searchform input[type='submit'] { background-color:#ff26a0; }
+	.style_3 #searchform input[type='submit'] { background-color:#e024e3; }
+	.style_4 #searchform input[type='submit'] { background-color:#e32424; }
+	.style_5 #searchform input[type='submit'] { background-color:#ff8a00; }
+	.style_1, .style_2, .style_3, .style_4, .style_5 { margin:100px; display:block; clear:both ;text-align: center;}
+</style>
+
+<body>
+<div align="center">
+  <h1>Welcome</h1>
+ </div>
+<div align="center">
+<input type="image" src="/media/images/add_author.png" style="width:119px;height:37px;"value="添加作者" onClick="location.href='/add_author/'">
+ <input type="image" value="添加图书" src="/media/images/add_book.png" style="width:119px;height:37px;"onClick="location.href='/add_book/'">
+ </div>
+<div class="style_4" align="center">
+		<form method="get" id="searchform" action="/search_book/">
+			<fieldset class="style_5">
+			<input id="authorname" name="authorname" type="text" value=""class="text_input" placeholder="请输入作者名" />
+	<input name="submit" type="submit" onClick="location.href='/search_book/?authorname={{author.Name}}'" value /> </fieldset>
+  </form>
+</div>
+</body>
+</html>

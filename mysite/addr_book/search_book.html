@@ -1,0 +1,39 @@
+<table width="1000" border=1 align="center">
+<title>查找结果</title>
+<link rel="stylesheet" type="text/css" href="/media/css/2.css"/>
+<style type="text/css">
+
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat
+}
+</style>
+<body>
+<tr style="text-align: center"><form method = "get">
+<div align="center">
+  <h1>查找结果</h1></div>
+  <tr bgcolor="gray">
+        <th style="text-align: center">书名</th>
+        <th style="text-align: center">作者</th>
+        <th style="text-align: center">出版社</th>
+        <th style="text-align: center">出版时间</th>
+        <th style="text-align: center">价格</th>
+        <th style="text-align: center">操作</th>
+    </tr>
+{% for book in books %}
+    <tr>
+        <td style="text-align: center">{{ book.Title }}</td>
+       
+        <td style="text-align: center">{{ book.Author.Name }}</td>
+        <td style="text-align: center">{{ book.Publisher }}</td>
+        <td style="text-align: center">{{ book.PublishDate }}</td>
+        <td style="text-align: center">{{ book.Price }}</td>
+        <td style="text-align: center"><input type="button" value="删除" onClick="location.href='/delete_book/?id={{book.id}}'"> 
+        <input type="button" value="更新" onClick="location.href='/update_book/?id={{book.id}}'">
+  </tr>
+{% endfor %}
+
+</table>
+<div align="center"><input type="button" value="返回主页" onClick="location.href='/lib_home/'">
+                    <input type="button" value="添加图书" onClick="location.href='/add_book2/?authorname={{author.Name}}'"></div>
+</body>

@@ -1,0 +1,76 @@
+<html>
+<head><title>我的通讯录</title>
+<title>我的通讯录</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+body {
+	background-image: url(http://www.9-star.com.tw/photo/prt/4c%5B1-1%5D/p135549/200909101521.jpg);
+}
+</style>
+</head>
+
+<body>
+<div align="center"><h1 style="font-style: normal; font-weight: 900;">我的通讯录</h1></div>
+<div align="center">共有 <b>{{count}}</b> 人, <input type="button" value="浏览全部" onclick="location.href='/all_people/'"></div>
+
+<form method = "post">
+<table border=1 align="center">
+    <tr bgcolor="gray">
+        <th>姓名</th>
+    </tr>
+    <tr>
+        <td><input name="name" type="text" placeholder="请如实填写"></td>
+    </tr> 
+    <tr bgcolor="gray">
+        <th>性别</th>
+    </tr>
+    <tr>      
+        <td><input name="sex" type="radio" value="M"> 男 <input name="sex" type="radio" value="F"> 女 </td>
+    </tr> 
+    <tr bgcolor="gray">
+        <th>学号</th>
+    </tr>
+    <tr>
+        <td><input name="number" type="text" pattern="[0-9]*" placeholder="仅限数字" ></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>电话</th>
+    </tr>
+    <tr>        
+        <td><input name="phone" type="text" pattern="[0-9]*" placeholder="仅限数字" ></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>Email</th>
+    </tr>
+    <tr>        
+        <td><input name="email" type="text" placeholder="***@***"></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>地址</th>
+    </tr>
+    <tr>
+        <td><input name="address" type="text" placeholder="请如实填写"></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>QQ</th>
+    </tr>
+    <tr>       
+        <td><input name="qq" type="text" pattern="[0-9]*" placeholder="仅限数字" ></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>生日</th>
+    </tr>
+    <tr>
+        <td><input name="birthday" type="text" pattern="\d{4}-\d{2}-\d{2}" placeholder="0000-00-00"></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>操作</th>
+    </tr>
+    <tr>
+        <td align="center"><input type="submit" value="保存"><input type="reset" value="重填"></td>
+    </tr>
+</table>
+</form>
+
+</body>
+<html>

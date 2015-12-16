@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>查找结果</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Iconos -->
+	<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="/media/css/style.css" media="screen" type="text/css" />
+
+</head>
+<body>
+<form  method="post">
+<head><title>Update</title></head>
+<div align="center"><h1>Update《{{book.Title}}》</h1></div>
+<div align="center">
+<table border=1 align="center">
+    
+    
+    <tr bgcolor="gray">
+        <th>Author</th>
+    </tr>
+    <tr>
+        <td><input name="author_name" type="text"  value={{ book.Author.Name }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>Publisher</th>
+    </tr>
+    <tr>
+        <td><input name="publisher" type="text" value={{ book.Publisher }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>Publishdate</th>
+    </tr>
+    <tr>
+        <td><input name="publishdate" type="text" value={{ book.PublishDate }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td><input name="price" type="text" value={{ book.Price }}></td>
+    </tr>
+    
+    <tr bgcolor="gray" align="center">
+        <th>Opration</th>
+    </tr>
+    <tr align="center">
+        <td><input type="submit" value="Save" onclick="location.href='/update_book_ok/'" > <input type="reset" value="Reset"></td>
+    </tr>
+
+</table>
+</div>
+
+</form>
+<div style="text-align:center;">
+    <input type="image" src="/media/images/home.png" style="width:81px;height:37px;"value="返回主页" onClick="location.href='/lib_home/'"> 
+</body>
+</html>

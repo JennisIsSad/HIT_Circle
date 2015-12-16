@@ -1,0 +1,86 @@
+input,textarea {
+    padding: 5px;
+    font-size: 15px;
+    outline: none;
+    text-shadow: 0px 1px 0px #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    -webkit-transition: .3s ease-in-out;
+    -moz-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+}
+
+input:focus,textarea:focus {
+     border: 1px solid #fafafa;
+     -webkit-box-shadow: 0px 0px 6px #007eff;
+     -moz-box-shadow: 0px 0px 5px #007eff;
+     box-shadow: 0px 0px 5px #007eff;
+}
+table{
+    table-layout:fixed;
+    empty-cells:show; 
+    border-collapse: collapse;
+    width:100%;
+    height:auto;
+    border:none;
+    font:12px "microsoft yahei";
+    text-align: center;
+    border: 1px solid #CCC;
+}
+
+table caption{
+    width:100%;
+    height:50px;
+    line-height:50px;
+    color: rgb(128, 128, 128);
+    text-align: left;
+}
+
+
+thead,tfoot{
+    width:100%;
+    color:#333;
+/*    border-top: 1px #CCC solid;
+    border-right: 1px #CCC solid;
+    border-bottom: 1px #CCC solid;
+    box-shadow: inset 0 2px 1px 1px white;*/
+    background: url(../images/thead.png);
+    height: 30px;
+}
+
+
+
+table thead th{
+    height:30px;
+    line-height:30px;
+    border-right: 1px solid #D6D6D6;
+}
+
+table tbody td{
+    width:20%;
+    height:30px;
+    line-height:30px;
+    text-align: left;
+    border-right: 1px dotted #CCC;
+}
+
+table tbody tr{
+}
+
+table tbody tr.even{
+    background:#E6E6E6;
+}
+
+table tbody tr.odd{
+    background:#F2F2F2;
+}
+
+table tbody tr:hover{
+     background:#C3D0E0;
+}
+table tbody tr.selected{
+    background:#C3D0E0;
+    color: #FFF;
+}
