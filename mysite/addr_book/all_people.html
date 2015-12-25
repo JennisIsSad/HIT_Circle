@@ -1,0 +1,48 @@
+<title>我的通讯录</title>
+<div align="center"><h1>查找结果
+<input type="button" value="注销" onClick="location.href='/login/'">
+<input type="button" value="修改密码" onClick="location.href='/set_password/'"></h1></div> 
+<link rel="stylesheet" type="text/css" href="/media/css/2.css"/>
+<style type="text/css">
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat
+}
+</style> 
+<div align="center">
+<form action="/search/" method="get">
+共有 <b>{{count}}</b> 人, <input type="button" value="添加联系人" onClick="location.href='/add_people/'">
+<input name="name" type="text" placeholder="请输入联系人" ><input type="submit" value="查询" onClick="location.href='/search/?name={{people.name}}'" >
+</div>
+</form>
+<table width="1000" border=1 align="center">
+
+<body>
+<tr style="text-align: center"><form method = "get">
+    
+  <tr bgcolor="gray">
+        <th style="text-align: center">姓名</th>
+        <th style="text-align: center">性别</th>
+        <th style="text-align: center">学号</th>
+        <th style="text-align: center">电话</th>
+        <th style="text-align: center">Email</th>
+        <th style="text-align: center">地址</th>
+        <th style="text-align: center">QQ</th>
+        <th style="text-align: center">生日</th>
+        <th style="text-align: center">操作</th>
+    </tr>
+{% for people in people_list %}
+    <tr>
+        <td style="text-align: center">{{ people.name }}</td>
+        <td style="text-align: center">{% if people.sex %} 男 {% else %} 女 {% endif %}</td>
+        <td style="text-align: center">{{ people.number }}</td>
+        <td style="text-align: center">{{ people.phone }}</td>
+        <td style="text-align: center">{{ people.email }}</td>
+        <td style="text-align: center">{{ people.address }}</td>
+        <td style="text-align: center">{{ people.qq }}</td>
+        <td style="text-align: center">{{ people.birthday }}</td>
+        <td style="text-align: center"><input type="button" value="删除" onClick="location.href='/delete/?id={{people.id}}'"> <input type="button" value="更新" onClick="location.href='/update/?id={{people.id}}'"></td>
+  </tr>
+{% endfor %}
+</table>
+</body>

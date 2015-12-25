@@ -1,0 +1,43 @@
+<table width="1000" border=1 align="center">
+<title>我的通讯录</title>
+<link rel="stylesheet" type="text/css" href="/media/css/2.css"/>
+<style type="text/css">
+
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat
+}
+</style>
+<body>
+<tr style="text-align: center"><form method = "get">
+<div align="center"><h1>我的通讯录</h1></div>
+  <tr bgcolor="gray">
+        <th style="text-align: center">姓名</th>
+        <th style="text-align: center">性别</th>
+        <th style="text-align: center">学号</th>
+        <th style="text-align: center">电话</th>
+        <th style="text-align: center">Email</th>
+        <th style="text-align: center">地址</th>
+        <th style="text-align: center">QQ</th>
+        <th style="text-align: center">生日</th>
+        <th style="text-align: center">操作</th>
+    </tr>
+{% for people in people %}
+    <tr>
+        <td style="text-align: center">{{ people.name }}</td>
+        <td style="text-align: center">{% if people.sex %} 男 {% else %} 女 {% endif %}</td>
+        <td style="text-align: center">{{ people.number }}</td>
+        <td style="text-align: center">{{ people.phone }}</td>
+        <td style="text-align: center">{{ people.email }}</td>
+        <td style="text-align: center">{{ people.address }}</td>
+        <td style="text-align: center">{{ people.qq }}</td>
+        <td style="text-align: center">{{ people.birthday }}</td>
+        <td style="text-align: center"><input type="button" value="删除" onclick="location.href='/delete/?id={{people.id}}'"> 
+        <input type="button" value="更新" onclick="location.href='/update/?id={{people.id}}'">
+  </tr>
+{% endfor %}
+
+</table>
+<div align="center"><input type="button" value="查看通讯录" onclick="location.href='/all_people/'">
+                    <input type="button" value="添加联系人" onclick="location.href='/add_people/'"></div>
+</body>

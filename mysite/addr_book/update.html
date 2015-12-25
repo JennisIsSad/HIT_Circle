@@ -1,0 +1,70 @@
+<form method="post">
+<head><title>更新联系人</title></head>
+<div align="center"><h1>更新联系人</h1></div>
+<style type="text/css">
+body {
+     background-image: url(/media/images/1.jpg);
+     background-repeat: no-repeat
+}
+</style>
+<table border=1 align="center">
+    <tr bgcolor="gray">
+        <th>姓名</th>
+    </tr>
+    <tr>
+        <td><input name="name" type="text"  value={{ people.name }}></td>
+    </tr>
+    <tr class="alt" bgcolor="gray">
+        <th>性别</th>
+    </tr>
+    <tr>
+        <td><input class="radio" name="sex" type="radio" value="M" checked="checked"> 男 <input class="radio" name="sex" type="radio" value="F" > 女 </td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>学号</th>
+    </tr>
+    <tr>
+        <td><input name="number" type="text"  value={{ people.number }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>电话</th>
+    </tr>
+    <tr>
+        <td><input name="phone" type="text" value={{ people.phone }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>Email</th>
+    </tr>
+    <tr>
+        <td><input name="email" type="email" value={{ people.email }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>QQ</th>
+    </tr>
+    <tr>
+        <td><input name="qq" type="text" value={{ people.qq }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>地址</th>
+    </tr>
+    <tr>
+        <td><input name="address" type="text" value={{ people.address }}></td>
+    </tr>
+    <tr bgcolor="gray">
+        <th>生日</th>
+    </tr>
+    <tr>
+        <td><input name="birthday" type="text" value={{ people.birthday }}></td>
+    </tr>
+    <tr bgcolor="gray" align="center">
+        <th>操作</th>
+    </tr>
+    <tr align="center">
+        <td><input type="submit" value="保存" onclick="location.href='/all_people/'" > <input type="reset" value="重填"></td>
+    </tr>
+
+</table>
+<div style="text-align:center;">
+    <input type="button" value="返回浏览通讯录" onclick="location.href='/all_people/'"><input type="button" value="添加联系人" onclick="location.href='/add_people/'">
+</div>
+</form>
